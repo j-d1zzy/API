@@ -1,7 +1,5 @@
-from typing import Union
 from typing import Optional
 from fastapi import FastAPI, HTTPException, Response, status
-from fastapi.params import Body
 from pydantic import BaseModel
 from random import randrange
 
@@ -31,13 +29,6 @@ my_posts = [{"title": "title of post 1", "content": "content of post 1", "id": 1
 @app.get("/")
 def read_root():
   return {"Message": "Welcome to my API! This is a WIP."}
-
-# This is a path operation in the Fast API documentation. In other languages/frameworks, these three lines are often referred to as a route.
-#
-# JSON is the main universal language of APIs. FastAPI converts the above into JSON. 
-# 
-# The @ sign indicates that what follows is a decorator. In this case, the decorator
-# identifies the code as a path operation, then there is the get method, and finally, the path.  
 
 @app.get("/posts")
 def get_posts():

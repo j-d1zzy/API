@@ -1,44 +1,63 @@
 ''' 
 
- API Course for Python  |
- _______________________|  
+API Course for Python  |
+_______________________|  
 
-1. What are Virtual Environments? 
-_________________________________
+What are Virtual Environments? 
+______________________________
 
 A virtual environment is a space on the machine is isolated from the rest of the system. 
 It is useful because it can provide an ideal environment for a given project, without affecting other 
-environments.ls
+environments.
 
+What are APIs?
+______________________________
 
-2. What is a Path Operation?
-_________________________________
+API stands for Application Programming Interface. The API is a set of rules and protocols that allow different software applications to
+communicate and interact with each other. It defines how different software components should interact, what data they can exchange, and how 
+they should exchange it. Essentially, they provide a standardized way for developers to enable communication between software, regardless
+of whether they are written in different programming languages, on different platforms, or using different technologies. APIs also often
+include security mechanisms. 
+
+What is FastAPI?
+______________________________
+
+FastAPI is a Python web framework used to build APIs quickly and efficiently. This framework allows the developer to define and handle API
+routes, manage requests and responses, handle exceptions, and manage the structure of API applications. 
+
+What is a Path Operation?
+______________________________
 
 @app.get("/")
-def read_root():
-  return {"message": "Hello World"}
 
-The decorator, signalled by the @ symbol, is followed by the method: .get, which is then followed by the path: /, and then finally you have the function.
-It will contain the logic for performing a task, the result of which will be returned to the user upon completion. 
+This is called a path operation in the Fast API documentation. In other languages/frameworks, these three lines are often referred to as a route.
 
-In the tutorial, when testing our HTTP requests, the tutor had us download and install a program called Postman. This is a way of testing requests that you wish to make of the
-server, without having to use the web browser. He assured us that we will come to appreciate this in time.
+The @ sign indicates that what follows is a decorator. In this case, the decorator identifies the code as a path operation, then there is the 
+method, and finally, the path. The decorator, signalled by the @ symbol, is followed by the method: .get, which is then followed by the path: /, 
+and then finally there is the function. This function will contain the logic for performing a task, the result of which will be returned to the 
+user upon completion. 
+
+JSON, which stands for JavaScript Object Notation, is the main universal language of APIs. Its lightweight format is well-suited to data
+interchange. In my API project, FastAPI converts Python into JSON before sending it. This is why a JSON response gets returned to the client.
+
+In the tutorial, when testing our HTTP requests, the tutor had us download and install a program called Postman. This is a way of testing 
+requests that you wish to make of the server, without having to use the web browser. He assured us that we will come to appreciate this in time.
 
 3. HTTP Requests
-________________________________
+______________________________
 
 When there is a Get Request, the device sends the request to the API server and then returns the request. With a POST request, the device sending the request can send data
 to the API server, and will also return anything it ought to according to the logic of the program. 
 
 4. Schema
-________________________________
+______________________________
 
 So far in our exercise, we've had a hard time getting values from the body. The client can send any old data. The data doesn't get validated. Ultimately, we want to force the
 user to follow a predictable schema. One tool we can use to help put a schema in place is pydantic. Using Pydantic in the lesson, I was able to make a Class which used the 
 BaseModel class imported from Pydantic to dictate a schema, which will limit what can be accepted in a post request from the user. 
 
 5. CRUD
-________________________________
+______________________________
 
 CRUD stands for Create | Read | Update | Delete
 
@@ -56,14 +75,14 @@ Update --> PUT/PATCH --> /posts/:id --> @app.put("/posts/{id}")
 Delete --> DELETE --> /posts/:id --> @app.delete("/posts/{id}")
 
 6. Documentation
-_______________________________
+______________________________
 
-One of the benefits of using FastAPI is that it makes documentation of your API very easy, using SwaggerUI. All the developer has to do is enter the URL/docs and they
-are presented with an easy-on-the-eye display of their API's documentation. Another documentation tool is /redoc. These tools might mean that we don't always have to use 
-Postman.
+One of the benefits of using FastAPI is that it makes documentation of your API very easy, using SwaggerUI. All the developer has to do is enter 
+the URL/docs and they are presented with an easy-on-the-eye display of their API's documentation. Another documentation tool is /redoc. These 
+tools might mean that we don't always have to use Postman.
 
 7. Databases
-_______________________________
+______________________________
 
 A database is a collection of organized data that can be easily accessed and managed. Developers don't work or interact with databases directly. Instead, we make use of a
 software referred to as a Database Management System (DBMS). 
