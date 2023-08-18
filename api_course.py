@@ -74,7 +74,12 @@ Update --> PUT/PATCH --> /posts/:id --> @app.put("/posts/{id}")
 
 Delete --> DELETE --> /posts/:id --> @app.delete("/posts/{id}")
 
-6. Documentation
+IMPORTANT: It is standard convention to pluralize nouns in the names of routes (/users instead of /user, /posts instead of /post).
+
+With the PUT method, all of the fields must be passed to the API, even if only one field is actually being altered. However, with the PATCH 
+method, you can update a single field. 
+
+. Documentation
 ______________________________
 
 One of the benefits of using FastAPI is that it makes documentation of your API very easy, using SwaggerUI. All the developer has to do is enter 
@@ -84,8 +89,8 @@ tools might mean that we don't always have to use Postman.
 7. Databases
 ______________________________
 
-A database is a collection of organized data that can be easily accessed and managed. Developers don't work or interact with databases directly. Instead, we make use of a
-software referred to as a Database Management System (DBMS). 
+A database is a collection of organized data that can be easily accessed and managed. Developers don't work or interact with databases directly. 
+Instead, we make use of a software referred to as a Database Management System (DBMS). 
 
 There are two kinds of database:
 
